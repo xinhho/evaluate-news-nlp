@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const app = express();
+app.use(express.static('dist'))
 
 const cors = require('cors');
 
@@ -15,11 +15,10 @@ console.log(__dirname);
 
 // Variables for url and api key
 
-
-app.get('/', function (req, res) {
-    res.send("This is the server API page, you may access its services via the client app.");
-});
-
+//GET Route
+app.get('/', (req, res) => {
+  res.sendFile('dist/index.html')
+})
 
 // POST Route
 
