@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
 
-    <body>
+  <body>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+    <header>
+      <div class="">
+          Logo
+      </div>
+      <div class="">
+          navigation
+      </div>
+    </header>
 
-        <main>
-            <section>
-                <form id="urlForm">
-                    <input id="name" type="text" name="url" placeholder="Enter URL" required>
-                    <button id="submitButton" type="submit">Submit</button>
-                </form>
-                
-            </section>
+    <main>
+      <section>
+        <P id="error"></P>
+        <form id="urlForm">
+            <input id="url" type="text" name="url" placeholder="Please enter URL" required>
+        </form>
+        <button id="submitButton" type="submit">Submit</button>
+      </section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+      <section>
+        <strong>Form Results:</strong>
+        <div id="results">
+          <span id="score-tag"></span>
+          <span id="agreement"></span>
+          <span id="subjectivity"></span>
+          <span id="confidence"></span>
+          <span id="irony"></span>
+        </div>
+      </section>
+    </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
+    <footer>
+      <p>This is a footer</p>
+    </footer>
     </body>
 </html>
