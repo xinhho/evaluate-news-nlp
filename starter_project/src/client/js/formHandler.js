@@ -1,9 +1,6 @@
 // Replace checkForName with a function that checks the URL
-import { checkValidUrl } from './nameChecker';
+import { checkValidUrl } from './urlChecker';
 const serverURL = 'http://localhost:8085/add-url';
-
-const submitButton = document.getElementById('submitButton');
-submitButton.addEventListener('click', handleSubmitAction);
 
 function handleSubmitAction(event) {
   event.preventDefault();

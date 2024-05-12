@@ -38,6 +38,10 @@ module.exports = {
     }),
     new WorkboxPlugin.GenerateSW()
   ],
+  output: {
+    libraryTarget: 'var',
+    library: 'Client'
+  },
   // devServer: {
   //     port: 3000,
   //     allowedHosts: 'all'

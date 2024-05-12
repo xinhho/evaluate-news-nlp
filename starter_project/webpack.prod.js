@@ -33,6 +33,10 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: "[name].css" }),
     new WorkboxPlugin.GenerateSW()
   ],
+  output: {
+    libraryTarget: 'var',
+    library: 'Client'
+  },
   // devServer: {
   //   port: 3000,
   //   allowedHosts: 'all'

@@ -24,7 +24,6 @@ app.use((_req, res, next) => {
 // Variables for url and api key
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 const apiKey = process.env.API_KEY
-console.log(`Your API Key is ${process.env.API_KEY}`);
 
 let projectData = {};
 

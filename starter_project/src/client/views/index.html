@@ -18,7 +18,7 @@
 
     <main>
       <section>
-        <form id="urlForm">
+        <form id="urlForm" onsubmit="return Client.handleSubmitAction(event)">
           <P id="error"></P>
           <input id="url" type="text" name="url" placeholder="Please enter URL" required>
           <button id="submitButton" type="submit">Submit</button>

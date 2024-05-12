@@ -1,5 +1,5 @@
 // import js files
-import { checkValidUrl } from './js/nameChecker'
+import { checkValidUrl } from './js/urlChecker'
 import { handleSubmitAction } from './js/formHandler'
 
 // sass files
