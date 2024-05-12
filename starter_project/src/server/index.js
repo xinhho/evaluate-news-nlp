@@ -2,6 +2,7 @@ var path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const fetch = require('node-fetch');
 const cors = require('cors');
 dotenv.config();
 
@@ -12,7 +13,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
 
-console.log(__dirname);
+app.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  next();
+});
+
+// console.log(__dirname);
 
 // Variables for url and api key
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
@@ -45,8 +52,9 @@ app.post('/add-url', async (req, res) => {
 })
 
 // Designates what port the app will listen to for incoming requests
-app.listen(8000, function () {
-    console.log('Example app listening on port 8088!');
+const port = 8085;
+const server = app.listen(port, () => {
+    console.log(`server is listening on port: ${port}`);
 });
 
 

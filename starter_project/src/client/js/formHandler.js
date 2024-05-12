@@ -1,6 +1,6 @@
 // Replace checkForName with a function that checks the URL
 import { checkValidUrl } from './nameChecker';
-const serverURL = 'https://localhost:8000/add-url';
+const serverURL = 'http://localhost:8085/add-url';
 
 const submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', handleSubmitAction);
@@ -22,11 +22,8 @@ function handleSubmitAction(event) {
 
 const showError = (errorMessage = '') => {
   const errorElement = document.getElementById('error');
-  errorElement.innerHTML = '';
-  if (errorMessage !== '') {
-    var text = document.createTextNode(errorMessage);
-    errorElement.appendChild(text);
-  }
+  var text = errorMessage !== '' ? document.createTextNode(errorMessage) : document.createTextNode('');
+  errorElement.appendChild(text);
 }
 
 const getArticleInforData = async (serverURL = '', urlInput = '') => {
@@ -36,7 +33,12 @@ const getArticleInforData = async (serverURL = '', urlInput = '') => {
   const parameter = {
     method: 'POST',
     credentials: 'same-origin',
-    headers: {'Content-Type': 'application/json'},
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, PUT, PATCH, GET, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': '*',
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(bodyParam)
   };
   
